@@ -1,0 +1,119 @@
+/* Global styles */
+
+:root {
+	--primary-color: #007bff;
+	--secondary-color: #6c757d;
+	--background-color: #f8f9fa;
+}
+
+body {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	color: var(--secondary-color);
+	background-color: var(--background-color);
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Header styles */
+
+header {
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 1rem 2rem;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+nav li {
+	margin: 0 1rem;
+}
+
+nav a:hover {
+	border-bottom: 2px solid var(--primary-color);
+}
+
+/* Main styles */
+
+main {
+	max-width: 1000px;
+	margin: 2rem auto;
+	padding: 0 2rem;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 1.2;
+	margin-bottom: 1rem;
+	color: var(--primary-color);
+}
+
+p {
+	margin-bottom: 1rem;
+}
+
+/* Footer styles */
+
+footer {
+	background-color: #f8f9fa;
+	text-align: center;
+	padding: 2rem 0;
+	margin-top: 2rem;
+}
+
+/* Media queries */
+
+@media (max-width: 767px) {
+	nav {
+		padding: 1rem;
+	}
+	
+	nav li {
+		margin: 0 0.5rem;
+	}
+	
+	h1 {
+		font-size: 2rem;
+	}
+}
+
+@media (max-width: 576px) {
+	nav {
+		padding: 0.5rem;
+	}
+	
+	nav li {
+		margin: 0 0.25rem;
+	}
+	
+	h1 {
+		font-size: 1.5rem;
+	}
+}
