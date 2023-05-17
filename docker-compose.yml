@@ -38,7 +38,7 @@ services:
   # Раздел для описания приложения 'client'.
   client:
 
-    image: sergeytabunschik/server:1.0.0
+    image: sergeytabunschik/client:1.0.0
 
     build: 
       context: client/
