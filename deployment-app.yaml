@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  labels:
+    app: web-server
+spec:
+  replicas: 2
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: web-server
+  template:
+    metadata:
+      labels:
+        app: web-server
+    spec:
+      containers:
+      - name: web-server
+        image: sergeytabunschik/server:1.0.0
+        ports:
+        - containerPort: 9057
+          name: serverport
+        startupProbe:
+          httpGet:
+            path: /
+            port: serverport
+          failureThreshold: 15
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /
+            port: serverport
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /
+            port: serverport
+          failureThreshold: 5
+          periodSeconds: 10
